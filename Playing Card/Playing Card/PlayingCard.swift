@@ -18,7 +18,7 @@ struct PlayingCard {
         case hearts = "♥︎"
         case diamonds = "♦︎"
         case clubs = "♣︎"
-    
+        
         static var all = [Suit.spades, .hearts, .diamonds, .clubs]
     }
     
@@ -36,20 +36,21 @@ struct PlayingCard {
             case .face(let kind) where kind == "K": return 13
             default: return 0
             }
-            
-            static var all: [Rank] {
-                var allRanks = [Rank.ace]
-                for pips in 2...10 {
-                    allRanks.append(Rank.numeric(pips))
-                }
-                allRanks += [Rank.face("J"), .face("Q"), .face("K")]
-                return allRanks
-            }
-            
         }
         
+        static var all: [Rank] {
+            var allRanks = [Rank.ace]
+            for pips in 2...10 {
+                allRanks.append(Rank.numeric(pips))
+            }
+            allRanks += [Rank.face("J"), .face("Q"), .face("K")]
+            return allRanks
+        }
         
     }
+    
+    
+    
     
 }
 
